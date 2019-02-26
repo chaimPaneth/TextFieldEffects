@@ -107,8 +107,6 @@ open class TextFieldEffects : UITextField {
             NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidEndEditing), name: UITextField.textDidEndEditingNotification, object: self)
             
             NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidBeginEditing), name: UITextField.textDidBeginEditingNotification, object: self)
-            
-            NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextField.textDidChangeNotification, object: self)
         } else {
             NotificationCenter.default.removeObserver(self)
         }
@@ -126,13 +124,6 @@ open class TextFieldEffects : UITextField {
     */
     @objc open func textFieldDidEndEditing() {
         animateViewsForTextDisplay()
-    }
-    
-    /**
-     The textfield has ended an editing session.
-     */
-    @objc open func textDidChange() {
-        
     }
     
     // MARK: - Interface Builder
